@@ -1,8 +1,8 @@
 # Raffle App
 
-## Backend Steps
+# Backend Steps
 
-### Resources
+## Resources
 
 - Express (Server)
 - Nodemon (To watch in real time server changes)
@@ -11,6 +11,12 @@
 - Cors (To avoid json errors)
 - Dotenv (To be able to use enviropment variables)
 
-## Frontend Steps
+### Steps
 
-### Resources
+- Modify package.json to tell node that use module scripts
+- Modify the run script to use nodemon
+- Create a .env file that contains the connection url with the database
+
+# Frontend Steps
+
+## Resources
