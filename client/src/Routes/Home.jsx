@@ -1,3 +1,4 @@
+import "./routes.css";
 import { useFetch } from "../hooks/useFetch";
 
 const Home = () => {

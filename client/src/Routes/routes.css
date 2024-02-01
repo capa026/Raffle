@@ -2,12 +2,15 @@
 .home {
   .table {
     display: grid;
-    grid-template-columns: repeat(10, 1fr);
+    grid-template-columns: repeat(20, 1fr);
+    justify-items: center;
     gap: 2px;
     padding: 1rem;
     background-color: white;
     border-radius: 8px;
     box-shadow: var(--shadow);
+    margin: auto;
+    width: 70%;
 
     .square {
       display: flex;
@@ -47,3 +50,15 @@
     }
   }
 } /*HOME*/
+
+@media (width <= 800px) {
+  .table {
+    grid-template-columns: repeat(10, 1fr) !important;
+  }
+}
+@media (width <= 600px) {
+  .table {
+    grid-template-columns: repeat(6, 1fr) !important;
+    width: 90% !important;
+  }
+}
