@@ -51,6 +51,60 @@
   }
 } /*HOME*/
 
+/*CreateTables*/
+.create--tables {
+  .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    background-color: white;
+    border-radius: 8px;
+    margin: 0 1rem;
+    padding: 0.5rem;
+    box-shadow: var(--shadow);
+
+    .wrapper {
+      gap: 10px;
+      input {
+        width: 50%;
+      }
+    }
+    input {
+      padding: 0.5rem;
+      border: 1px solid var(--primary);
+      border-left: 2px solid var(--primary);
+      border-right: 2px solid var(--primary);
+      outline: none;
+      border-radius: 8px;
+      box-shadow: var(--shadow-bot);
+      text-align: center;
+    }
+    button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      padding: 0.5rem;
+      width: 50%;
+      border-radius: 8px;
+      outline: none;
+      border: none;
+      background-color: var(--secondary);
+      color: white;
+      font-weight: bolder;
+      font-size: 1rem;
+      box-shadow: var(--shadow-bot);
+    }
+
+    button:hover {
+      background: var(--secondary-dark);
+      color: grey;
+    }
+  }
+} /*CreateTables*/
+
 @media (width <= 800px) {
   .table {
     grid-template-columns: repeat(10, 1fr) !important;
