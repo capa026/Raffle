@@ -11,7 +11,7 @@ export const useFetch = (url) => {
       setLoading(true);
       try {
         const res = await axios.get("http://localhost:8000/" + url);
-        setData(res.data;
+        setData(res.data);
       } catch (error) {
         setError(error);
       }
