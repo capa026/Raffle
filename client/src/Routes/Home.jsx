@@ -1,7 +1,8 @@
 const Home = () => {
+  const { data, loading, error } = useFetch();
   return (
     <div className="home">
-      <div className="container wrapper">Home</div>
+      <div className="container wrapper"></div>
     </div>
   );
 };

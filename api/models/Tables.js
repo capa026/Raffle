@@ -7,10 +7,10 @@ const TableSchema = new mongoose.Schema(
       required: true,
     },
     availableNumbers: {
-      type: [Number],
+      type: [mongoose.Schema.Types.Mixed],
     },
     unAvailableNumbers: {
-      type: [Number],
+      type: [mongoose.Schema.Types.Mixed],
     },
   },
   { timestamps: true }
