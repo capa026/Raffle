@@ -28,6 +28,7 @@
     background-color: var(--secondary);
     box-shadow: var(--shadow);
     border-radius: 0 0 8px 8px;
+
     .item {
       display: flex;
       align-items: center;
@@ -44,6 +45,8 @@
     height: max-content;
   }
 } /*NAVBAR*/
+
+/*HOME*/
 .home {
   margin-top: 1rem;
-}
+} /*HOME*/
