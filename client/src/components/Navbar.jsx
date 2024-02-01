@@ -16,23 +16,18 @@ const Navbar = () => {
           <Menu size={32} />
         </div>
         <div className={`menu--content ${openMenu && "view"}`}>
-          <div className="item">
-            <Link
-              to="/createTables"
-              style={{ color: "inherit", textDecoration: "none" }}
-            >
-              <PlusCircle size={20} />
-              Crear Tabla
-            </Link>
-          </div>
-          <div className="item">
+          <Link className="item" to="/createTables">
+            <PlusCircle size={20} />
+            Crear Tabla
+          </Link>
+          <Link className="item">
             <Folder size={20} />
             Ver Tablas
-          </div>
-          <div className="item">
+          </Link>
+          <Link className="item">
             <ShieldOff size={20} />
             Coming soon...
-          </div>
+          </Link>
         </div>
       </div>
     </div>
