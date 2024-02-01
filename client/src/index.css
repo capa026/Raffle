@@ -33,3 +33,6 @@ body {
   display: flex;
   align-items: center;
 }
+.routes {
+  padding-top: 1rem;
+}
