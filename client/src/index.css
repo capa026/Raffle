@@ -7,6 +7,12 @@
   -moz-osx-font-smoothing: grayscale;
 
   --bg-color: #d6d6d6;
+  --primary: #3b084f;
+  --secondary: #ce2d4f;
+  --secondary-dark: #97213a;
+
+  --shadow: 0 0px 15px -3px black;
+  --shadow-bot: 0 5px 15px -5px black;
 }
 * {
   margin: 0;
@@ -22,4 +28,8 @@ body {
   width: 100%;
   max-width: 1200px;
   margin: auto;
+}
+.wrapper {
+  display: flex;
+  align-items: center;
 }
