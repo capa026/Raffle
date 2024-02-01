@@ -20,3 +20,6 @@
 # Frontend Steps
 
 ## Resources
+
+- Axios
+- React router Dom
