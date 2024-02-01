@@ -3,6 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 
+import tablesRoute from "./routes/tables.js";
 //Init
 const app = express();
 dotenv.config();
@@ -18,7 +19,9 @@ const connect = async () => {
 //Middlewares
 app.use(express.json());
 app.use(cors());
+
 //Routes
+app.use("/tables", tablesRoute);
 
 //Errors
 

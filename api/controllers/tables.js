@@ -9,3 +9,12 @@ export const createTable = async (req, res, next) => {
     next(error);
   }
 };
+
+export const getTables = async (req, res, next) => {
+  try {
+    const tables = await Tables.find();
+    res.status(200).json(tables);
+  } catch (error) {
+    next(error);
+  }
+};
