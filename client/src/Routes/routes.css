@@ -102,6 +102,16 @@
       background: var(--secondary-dark);
       color: grey;
     }
+    .error {
+      background-color: rgb(251, 126, 126);
+      margin: auto;
+      color: red;
+      font-weight: bold;
+      text-align: center;
+      padding: 0.5rem;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
   }
 } /*CreateTables*/
 
