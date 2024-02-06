@@ -1,16 +1,14 @@
 import { FilePlus } from "lucide-react";
 import { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const CreateTables = () => {
+  const navigate = useNavigate();
   const [info, setInfo] = useState({
     name: "",
     from: "",
     to: "",
-  });
-
-  const [table, setTable] = useState({
-    name: undefined,
-    availableNumbers: [],
   });
 
   const [error, setError] = useState("");
@@ -32,18 +30,27 @@ const CreateTables = () => {
     }
 
     for (let i = info.from; i <= info.to; i++) {
-      let row = { n: parseInt(i), name: "" };
+      let row = { n: parseInt(i), name: "No asignado" };
       availableNumbers.push(row);
     }
-    setTable((prev) => ({
-      name: info.name,
-      availableNumbers: availableNumbers,
-    }));
-    console.log(table);
 
-    handleSubmit(availableNumbers);
+    handleSubmit({ name: info.name, array: availableNumbers });
   };
-  const handleSubmit = (table) => {};
+
+  const handleSubmit = async ({ name, array }) => {
+    try {
+      const res = await axios.post("http://localhost:8000/tables", {
+        name: name,
+        availableNumbers: array,
+        unAvailableNumbers: [],
+      });
+      console.log(res);
+      navigate("/");
+    } catch (error) {
+      throw error;
+    }
+  };
+
   return (
     <div className="create--tables">
       <div className="container">

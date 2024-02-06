@@ -1,53 +1,13 @@
 /*HOME*/
 .home {
-  .table {
-    display: grid;
-    grid-template-columns: repeat(20, 1fr);
-    justify-items: center;
-    gap: 2px;
-    padding: 1rem;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: var(--shadow);
-    margin: auto;
-    width: 70%;
-
-    .square {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      border: 2px solid black;
-      border-radius: 8px;
-      width: 50px;
-      height: 50px;
-      text-align: center;
-      padding: 0.5rem;
-      cursor: pointer;
-
-      h1 {
-        font-size: 1.3rem;
-      }
-
-      .tooltip {
-        opacity: 0;
-        position: absolute;
-        bottom: 100%;
-        left: 0;
-        background-color: var(--secondary);
-        color: white;
-        font-weight: bolder;
-        border-radius: 8px 8px 8px 0;
-        padding: 0.3rem;
-        transition: opacity 0.3s;
-      }
-    }
-    .square:hover {
-      background: var(--bg-color);
-      .tooltip {
-        opacity: 1;
-      }
-    }
+  .wrapper {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .message {
+    text-align: center;
+    color: grey;
+    padding-top: 5rem;
   }
 } /*HOME*/
 
@@ -116,13 +76,9 @@
 } /*CreateTables*/
 
 @media (width <= 800px) {
-  .table {
-    grid-template-columns: repeat(10, 1fr) !important;
-  }
 }
 @media (width <= 600px) {
-  .table {
-    grid-template-columns: repeat(6, 1fr) !important;
-    width: 90% !important;
+  .table-content {
+    width: 95% !important;
   }
 }
