@@ -18,3 +18,22 @@ export const getTables = async (req, res, next) => {
     next(error);
   }
 };
+
+export const updateTable = async (req, res, next) => {
+  try {
+    await Tables.updateOne(
+      { _id: req.params.id },
+      {
+        $set: {
+          [`availableNumbers.${req.body.index}.name`]: req.body.name,
+        },
+        $push: {
+          unAvailableNumbers: req.body.index,
+        },
+      }
+    );
+    res.status(200).json("Updated");
+  } catch (error) {
+    next(error);
+  }
+};

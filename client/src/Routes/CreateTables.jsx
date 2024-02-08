@@ -44,7 +44,6 @@ const CreateTables = () => {
         availableNumbers: array,
         unAvailableNumbers: [],
       });
-      console.log(res);
       navigate("/");
     } catch (error) {
       throw error;

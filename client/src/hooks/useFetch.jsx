@@ -5,12 +5,12 @@ export const useFetch = (url) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
-
+  const server = "http://localhost:8000/";
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const res = await axios.get("http://localhost:8000/" + url);
+        const res = await axios.get(server + url);
         setData(res.data);
       } catch (error) {
         setError(error);
@@ -20,5 +20,16 @@ export const useFetch = (url) => {
 
     fetchData();
   }, [url]);
-  return { data, loading, error };
+
+  const reFetch = async (url) => {
+    setLoading(true);
+    try {
+      const res = await axios.get(server + url);
+      setData(res.data);
+    } catch (error) {
+      setError(error);
+    }
+    setLoading(false);
+  };
+  return { data, loading, error, reFetch };
 };
