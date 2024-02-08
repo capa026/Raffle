@@ -1,10 +1,9 @@
 import { useState } from "react";
-import ".//components.css";
+import "./components.css";
 import { Folder, Menu, PlusCircle, ShieldOff } from "lucide-react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const navigate = useNavigate();
   const [openMenu, setOpenMenu] = useState(false);
   return (
     <div className="navbar">

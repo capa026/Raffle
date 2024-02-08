@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { X, XCircle } from "lucide-react";
+import { ScrollText, X, XCircle } from "lucide-react";
 import axios from "axios";
 
 const Table = ({ name, availableNumbers, unAvailableNumbers, id, reFetch }) => {
@@ -32,7 +32,14 @@ const Table = ({ name, availableNumbers, unAvailableNumbers, id, reFetch }) => {
   };
   return (
     <div className="table">
-      <h1>{name}</h1>
+      <div className="table--top">
+        <h1>{name}</h1>
+
+        <div className="people--list--btn">
+          <ScrollText />
+          Lista de personas
+        </div>
+      </div>
 
       <div className="edit--options"></div>
       {openEdit && (
