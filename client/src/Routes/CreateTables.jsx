@@ -39,11 +39,14 @@ const CreateTables = () => {
 
   const handleSubmit = async ({ name, array }) => {
     try {
-      const res = await axios.post("http://localhost:8000/tables", {
-        name: name,
-        availableNumbers: array,
-        unAvailableNumbers: [],
-      });
+      const res = await axios.post(
+        "https://express-server-jp32.onrender.com/tables",
+        {
+          name: name,
+          availableNumbers: array,
+          unAvailableNumbers: [],
+        }
+      );
       navigate("/");
     } catch (error) {
       throw error;
