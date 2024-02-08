@@ -5,7 +5,7 @@ export const useFetch = (url) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
-  const server = "http://localhost:8000/";
+  const server = "https://express-server-jp32.onrender.com/";
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
