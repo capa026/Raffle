@@ -15,14 +15,16 @@ const Home = () => {
       )}
       <div className="container wrapper">
         {data.map((table, i) => (
-          <Table
-            name={table.name}
-            availableNumbers={table.availableNumbers}
-            unAvailableNumbers={table.unAvailableNumbers}
-            key={i}
-            id={table._id}
-            reFetch={reFetch}
-          />
+          <div className="table--container">
+            <Table
+              name={table.name}
+              availableNumbers={table.availableNumbers}
+              unAvailableNumbers={table.unAvailableNumbers}
+              key={i}
+              id={table._id}
+              reFetch={reFetch}
+            />
+          </div>
         ))}
       </div>
     </div>

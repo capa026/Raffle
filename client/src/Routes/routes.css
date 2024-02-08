@@ -9,6 +9,10 @@
     color: grey;
     padding-top: 5rem;
   }
+  .table--container {
+    display: flex;
+    justify-content: space-between;
+  }
 } /*HOME*/
 
 /*CreateTables*/
