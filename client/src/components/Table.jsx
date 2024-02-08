@@ -20,7 +20,7 @@ const Table = ({ name, availableNumbers, unAvailableNumbers, id, reFetch }) => {
     if (newName.trim() === "") return;
 
     try {
-      await axios.put("https://express-server-jp32.onrender.com/" + id, {
+      await axios.put("https://express-server-jp32.onrender.com/tables/" + id, {
         index: edit.index,
         name: newName,
       });
