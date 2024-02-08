@@ -1,4 +1,4 @@
-const PeopleList = () => {
-  return <div>PeopleList</div>;
+const PeopleList = ({ availableNumbers }) => {
+  return <div>PeopleList {availableNumbers.length}</div>;
 };
 export default PeopleList;

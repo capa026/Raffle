@@ -9,14 +9,22 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <div className="container wrapper">
-        <Link to="/" style={{ color: "inherit", textDecoration: "none" }}>
+        <Link
+          to="/"
+          style={{ color: "inherit", textDecoration: "none" }}
+          onClick={() => setOpenMenu(false)}
+        >
           <h1>Raffle (rifas jsjs)</h1>
         </Link>
         <div className="btn--menu" onClick={() => setOpenMenu(!openMenu)}>
           <Menu size={32} />
         </div>
         <div className={`menu--content ${openMenu && "view"}`}>
-          <Link className="item" to="/createTables">
+          <Link
+            className="item"
+            to="/createTables"
+            onClick={() => setOpenMenu(false)}
+          >
             <PlusCircle size={20} />
             Crear Tabla
           </Link>

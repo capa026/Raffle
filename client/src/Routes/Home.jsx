@@ -1,7 +1,6 @@
 import "./routes.css";
 import { useFetch } from "../hooks/useFetch";
 import Table from "../components/Table";
-import { useEffect, useState } from "react";
 
 const Home = () => {
   const { data, loading, error, reFetch } = useFetch("tables");
@@ -15,12 +14,11 @@ const Home = () => {
       )}
       <div className="container wrapper">
         {data.map((table, i) => (
-          <div className="table--container">
+          <div className="table--container" key={i}>
             <Table
               name={table.name}
               availableNumbers={table.availableNumbers}
               unAvailableNumbers={table.unAvailableNumbers}
-              key={i}
               id={table._id}
               reFetch={reFetch}
             />
