@@ -7,7 +7,7 @@
   "scripts": {
     "start": "nodemon index.js",
     "build": "react-scripts build",
-    "deploy": "node server.js"
+    "deploy": "node index.js"
   },
   "author": "",
   "license": "ISC",
