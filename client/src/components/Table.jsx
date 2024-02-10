@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { ScrollText, X, XCircle } from "lucide-react";
+import { NotebookTabs, ScrollText, X, XCircle } from "lucide-react";
 import axios from "axios";
 
 const Table = ({ name, availableNumbers, unAvailableNumbers, id, reFetch }) => {
+  const [openList, setOpenList] = useState(false);
   const [openEdit, setOpenEdit] = useState(false);
   const [newName, setNewName] = useState("");
   const [edit, setEdit] = useState({ index: null });
@@ -30,18 +31,59 @@ const Table = ({ name, availableNumbers, unAvailableNumbers, id, reFetch }) => {
       throw error;
     }
   };
+
+  const arr = [];
+  availableNumbers.forEach((obj) => {
+    const { n, name } = obj;
+  });
   return (
     <div className="table">
       <div className="table--top">
-        <h1>{name}</h1>
-
-        <div className="people--list--btn">
+        <div
+          className="people--list--btn"
+          onClick={() => setOpenList(!openList)}
+        >
           <ScrollText />
           Lista de personas
         </div>
+        <h1>
+          <NotebookTabs size={30} />
+          {name}
+        </h1>
       </div>
 
-      <div className="edit--options"></div>
+      <div className="division" />
+
+      {openList && (
+        <div className="people--list">
+          <div className="close--list">
+            <XCircle
+              color="white"
+              onClick={() => setOpenList(false)}
+              size={25}
+            />
+          </div>
+          <div className="list">
+            <h1>Lista de personas y sus numeros</h1>
+            {availableNumbers.map(
+              (item) =>
+                item.name !== "No asignado" && (
+                  <div className="person">
+                    <div className="name">
+                      {item.name} y {item.n}
+                    </div>
+                    <div className="number">
+                      {unAvailableNumbers.map((n) => (
+                        <div className="n">{n == item.n && n}</div>
+                      ))}
+                    </div>
+                  </div>
+                )
+            )}
+          </div>
+        </div>
+      )}
+
       {openEdit && (
         <div className="edit--square">
           <div className="edit--title">

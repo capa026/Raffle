@@ -1,11 +1,24 @@
 import "./routes.css";
 import { useFetch } from "../hooks/useFetch";
 import Table from "../components/Table";
+import { ThreeCircles } from "react-loader-spinner";
 
 const Home = () => {
   const { data, loading, error, reFetch } = useFetch("tables");
 
-  if (loading) return;
+  if (loading)
+    return (
+      <div className="loader">
+        <ThreeCircles
+          visible={true}
+          height="100"
+          width="100"
+          color="#97213a"
+          ariaLabel="three-circles-loading"
+        />
+        Cargando...
+      </div>
+    );
 
   return (
     <div className="home">

@@ -56,6 +56,39 @@
   align-items: center;
   gap: 1rem;
 
+  .division {
+    width: 90%;
+    height: 1px;
+    background-color: black;
+    box-shadow: 0 1px 6px black;
+  }
+  .table--top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+
+    h1 {
+      font-size: 1.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-shadow: 1px 1px 3px black;
+    }
+
+    .people--list--btn {
+      cursor: pointer;
+      user-select: none;
+      display: flex;
+      font-weight: bold;
+      border-radius: 8px;
+      background-color: var(--secondary);
+      color: white;
+      padding: 0.5rem;
+      gap: 5px;
+      box-shadow: var(--shadow-bot);
+    }
+  }
   .edit--square {
     position: fixed;
     z-index: 200;
@@ -170,6 +203,49 @@
       .tooltip {
         display: block;
       }
+    }
+  }
+
+  .people--list {
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    display: flex;
+    overflow-y: auto;
+    justify-content: center;
+
+    .list {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      height: max-content;
+      background: var(--bg-color);
+      gap: 1rem;
+      padding: 1rem;
+      margin: 1rem 0;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+
+      h1 {
+        font-size: 1.5rem;
+        text-align: center;
+      }
+      .person {
+        background-color: white;
+        border-radius: 8px;
+        padding: 0.5rem;
+      }
+    }
+    .close--list {
+      cursor: pointer;
+      position: fixed;
+      top: 10px;
+      right: 10px;
     }
   }
 }
