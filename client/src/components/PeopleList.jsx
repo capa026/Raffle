@@ -36,27 +36,19 @@ const PeopleList = ({ availableNumbers, setOpenList }) => {
       </div>
       <div className="list">
         <h1>Lista de personas y sus numeros</h1>
-        {
-          people.map(
-            (item, i) =>
-              item.name !== "No asignado" && (
-                <div className="person" key={i}>
-                  <div className="name">{item.name}</div>
-                  <div className="number">
-                    {item.numbers.map((n) => (
-                      <span key={n}>{n}</span>
-                    ))}
-                  </div>
-                </div>
-              )
-          )
-          /* 
-        availableNumbers.map(
+        {people.map(
           (item, i) =>
             item.name !== "No asignado" && (
+              <div className="person" key={i}>
+                <div className="name">{item.name}</div>
+                <div className="number">
+                  {item.numbers.map((n) => (
+                    <span key={n}>{n}</span>
+                  ))}
+                </div>
+              </div>
             )
-            )*/
-        }
+        )}
       </div>
     </div>
   );

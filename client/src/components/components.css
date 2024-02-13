@@ -223,7 +223,7 @@
     .list {
       display: flex;
       flex-direction: column;
-      width: 50%;
+      width: 60%;
       height: max-content;
       background: var(--bg-color);
       gap: 1rem;
@@ -276,6 +276,9 @@
 @media (width <= 800px) {
   .menu--content {
     width: 30% !important;
+  }
+  .list {
+    width: 80% !important;
   }
 }
 @media (width <= 600px) {
