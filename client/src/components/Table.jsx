@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { NotebookTabs, ScrollText, X, XCircle } from "lucide-react";
+import { NotebookTabs, Receipt, ScrollText, X, XCircle } from "lucide-react";
 import axios from "axios";
+import PeopleList from "./PeopleList";
 
 const Table = ({ name, availableNumbers, unAvailableNumbers, id, reFetch }) => {
   const [openList, setOpenList] = useState(false);
@@ -47,41 +48,22 @@ const Table = ({ name, availableNumbers, unAvailableNumbers, id, reFetch }) => {
           Lista de personas
         </div>
         <h1>
-          <NotebookTabs size={30} />
+          <NotebookTabs size={30} color="#97213a" />
           {name}
+        </h1>
+        <h1>
+          <Receipt size={30} color="green" />
+          Vendidos: {unAvailableNumbers.length}
         </h1>
       </div>
 
       <div className="division" />
 
       {openList && (
-        <div className="people--list">
-          <div className="close--list">
-            <XCircle
-              color="white"
-              onClick={() => setOpenList(false)}
-              size={25}
-            />
-          </div>
-          <div className="list">
-            <h1>Lista de personas y sus numeros</h1>
-            {availableNumbers.map(
-              (item) =>
-                item.name !== "No asignado" && (
-                  <div className="person">
-                    <div className="name">
-                      {item.name} y {item.n}
-                    </div>
-                    <div className="number">
-                      {unAvailableNumbers.map((n) => (
-                        <div className="n">{n == item.n && n}</div>
-                      ))}
-                    </div>
-                  </div>
-                )
-            )}
-          </div>
-        </div>
+        <PeopleList
+          availableNumbers={availableNumbers}
+          setOpenList={setOpenList}
+        />
       )}
 
       {openEdit && (

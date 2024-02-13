@@ -73,13 +73,14 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      text-shadow: 1px 1px 3px black;
+      text-shadow: 1px 1px 2px black;
     }
 
     .people--list--btn {
       cursor: pointer;
       user-select: none;
       display: flex;
+      align-items: center;
       font-weight: bold;
       border-radius: 8px;
       background-color: var(--secondary);
@@ -236,9 +237,31 @@
         text-align: center;
       }
       .person {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
         background-color: white;
         border-radius: 8px;
         padding: 0.5rem;
+        box-shadow: var(--shadow);
+
+        .name {
+          font-weight: bold;
+        }
+        .number {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 1rem;
+
+          span {
+            box-shadow: inset 0px 0px 5px black;
+            padding: 0.5rem;
+            text-align: center;
+            width: 40px;
+            background-color: var(--bg-color);
+            border-radius: 8px;
+          }
+        }
       }
     }
     .close--list {
@@ -262,5 +285,12 @@
   }
   .menu--content {
     width: 40% !important;
+  }
+  .table--top {
+    width: 95% !important;
+
+    * {
+      font-size: 0.7rem !important;
+    }
   }
 }
