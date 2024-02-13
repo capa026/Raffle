@@ -29,7 +29,6 @@ const PeopleList = ({ availableNumbers, setOpenList }) => {
     return 0;
   });
 
-  console.log(totalSelled);
   return (
     <div className="people--list">
       <div className="close--list">
