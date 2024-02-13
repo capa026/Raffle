@@ -73,7 +73,6 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      text-shadow: 1px 1px 2px black;
     }
 
     .people--list--btn {
